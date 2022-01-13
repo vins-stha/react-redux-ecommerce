@@ -25,18 +25,25 @@ export const Navbar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+         
           </ul>
           <form class="form-flex" name="search-form" id="search-form">
             <input  class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search"/>
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
   
-        <div className="login ml-5">
+        <div className="buttons ml-10">
             <a className="btn btn-outline-light" href=''>
+            <i className="fa fa-sign-in m-r-1"/>
             Login
+            </a>
+            <a className="btn btn-outline-light" href=''>
+                <i className="fa fa-user-plus m-r-1"></i>
+            Register
+            </a>
+            <a className="btn btn-outline-light" href=''>
+                <i className="fa fa-shopping-cart m-r-1"></i>
+            Cart(0)
             </a>
             
         </div>

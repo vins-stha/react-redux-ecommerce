@@ -169,8 +169,18 @@ body {
 
  .form-flex {
    display: flex;
-   margin-left: 1rem;   
+   margin-left:2rem;   
  }
  .login {
   margin-left: 30%;
  }
+
+ .buttons {
+   display: flex;
+   margin-left: 1rem;
+   width: 30%;
+   justify-content: space-evenly;
+ }
+.m-r-1 {
+  margin-right: 0.5rem;
+}
