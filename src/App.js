@@ -11,8 +11,6 @@ import Products from './components/Product';
 import ProductDetail from './components/ProductDetail';
 function App() {
  
-  
-  
   return (
   
     <div className='container m-t-5'>

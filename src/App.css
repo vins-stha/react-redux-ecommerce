@@ -275,3 +275,17 @@ a {
 }
 
 /** Product detail*******/
+.product {
+  flex-direction: column;
+}
+.prod-detail-image {
+  width: 100% !important;
+  height: 30rem;
+  padding: 2rem;
+  margin-right: 3rem
+}
+.prod-buttons {
+  margin-top: 1rem;
+  width: 50%;
+
+}
