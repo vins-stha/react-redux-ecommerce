@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ProductDetail from './ProductDetail';
+import { createStore } from 'react-redux';
+import {cartStore} from '../index.js'
 
 export default function Products() {
 
@@ -40,7 +42,12 @@ export default function Products() {
         return (<ProductDetail id={id} />)
     }
 
-    const handleAddToCart = () => {
+    const handleAddtoCart = (product) => {
+        // console.log('id=', id)
+        cartStore.dispatch({
+            type:"ADD_ITEM",
+            payload: product
+        })
 
     }
 
@@ -76,6 +83,8 @@ export default function Products() {
         const cat_data = products.filter((product) => product.category === cat_name);
         setFilteredData(cat_data);
     }
+
+ 
     return (
         <>
             <div className="product-contents clearfix">
@@ -152,7 +161,13 @@ export default function Products() {
                                         <div className="card-text small">Price : ${product.price}</div>
                                     </div>
                                 </a>
-                                <div className="btn btn-primary block">Add to Cart</div>
+                                <a className="btn btn-primary block" 
+                                    onClick={ (e)=>
+                                        {e.preventDefault(); 
+                                        handleAddtoCart(product)}
+                                    }
+                                
+                                >Add to Cart</a>
                             </div>
                         )
                     })}

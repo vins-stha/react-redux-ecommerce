@@ -9,6 +9,7 @@ import { Cart } from './components/Cart';
 import { UserLogin } from './components/UserLogin';
 import Products from './components/Product';
 import ProductDetail from './components/ProductDetail';
+
 function App() {
  
   return (
@@ -26,17 +27,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
-    {/* <Cart/>
-    <UserLogin/> */}
-    {/* <Product/>
-    <ProductDetail/> */}
-    {/* <BrowserRouter>
-      <Switch>
-       
-          <Route exact path="/product/:id" element={<ProductDetail/>}></Route>
-       
-      </Switch>
-    </BrowserRouter>  */}
+
     </div>
     
    

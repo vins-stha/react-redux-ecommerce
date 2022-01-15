@@ -33,7 +33,7 @@ export default function ProductDetail(props) {
         return (
             <>
                  <div className="d-flex">
-                    <img src={productDetail.image} className=" prod-detail-git image card-img-top" alt="" height="250px" border="1px solid black" />
+                    <img src={productDetail.image} className=" prod-detail-image card-img-top" alt="" height="250px" border="1px solid black" />
                     <div className="details flex-column">
                         <h4 className="text-uppercase text-black-50">{productDetail.category}</h4>
                         <h1 className='display-5'>{productDetail.title}</h1>
