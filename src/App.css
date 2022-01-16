@@ -289,3 +289,22 @@ a {
   width: 50%;
 
 }
+
+
+/***CART***/
+.cart-card {
+  height: 200px;
+  border: 1px solid black !important;
+  width: 100%;
+}
+
+.cart-card__img {
+  width: 40%;
+  border:1px solid blue;
+  height: 100%;
+}
+
+.cart-item-detail {
+  display: flex;
+  flex-direction: column;
+}

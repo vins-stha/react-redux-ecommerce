@@ -1,9 +1,26 @@
-import React from 'react'
+import React, {useEffect,useState} from 'react'
+import { useSelector } from 'react-redux'
 
-export const Navbar = () => {
+
+ export const Navbar = (props) => {
+    let qty = 0
+    
+    const [totalItemsInCart, setTotalItemsInCart] = useState(0)
+     const state = useSelector((state) => state)
+     useEffect(() => {
+
+        state.cart.forEach(item => {
+            qty += item.item_qty
+            
+        });
+        setTotalItemsInCart(qty)
+         console.log('posts', state.cart, 'total ', totalItemsInCart)
+     }, [state])
+
+    
     return (
        
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-2">
+        <nav className="navbar navbar-expand-lg navbar-dark p-2">
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -15,10 +32,10 @@ export const Navbar = () => {
               <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item active">
-              <a className="nav-link" href="#">Contact <span className="sr-only">(current)</span></a>
+              <a className="nav-link" href="">Contact <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item active">
-              <a className="nav-link" href="#">Products <span className="sr-only">(current)</span></a>
+              <a className="nav-link" href="/products">Products <span className="sr-only">(current)</span></a>
             </li> <li className="nav-item active">
               <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
             </li>
@@ -41,9 +58,9 @@ export const Navbar = () => {
                 <i className="fa fa-user-plus m-r-1"></i>
             Register
             </a>
-            <a className="btn btn-outline-light" href=''>
+            <a className="btn btn-outline-light" href='/cart'>
                 <i className="fa fa-shopping-cart m-r-1"></i>
-            Cart(0)
+            Cart({totalItemsInCart})
             </a>
             
         </div>
