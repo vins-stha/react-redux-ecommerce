@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ProductDetail from './ProductDetail';
-import { createStore } from 'react-redux';
 import {cartStore} from '../index.js'
 
 export default function Products() {
@@ -28,8 +27,7 @@ export default function Products() {
 
         await fetch(searchUrl)
             .then(res => res.json())
-            .then(json => {
-                // url === "categories" ?  setCategories(json): {setProducts(json); setFilteredData(json)}
+            .then(json => {               
                 setProducts(json);
                 setFilteredData(json)
                 setLoading(false)
@@ -43,8 +41,7 @@ export default function Products() {
     }
 
     const handleAddtoCart = (product) => {
-        // console.log('id=', id)
-        cartStore.dispatch({
+            cartStore.dispatch({
             type:"ADD_ITEM",
             payload: product
         })
@@ -95,7 +92,7 @@ export default function Products() {
                             e.preventDefault();
                             categorizedData("jewelery");
                         }}>
-                        <i className="fa fa-sign-in m-r-1" />
+                        <i className="far fa-gem m-r-1"></i>
                         Jewellery
                     </a>
                     <a className="btn btn-outline-dark m-r-1"
@@ -104,7 +101,7 @@ export default function Products() {
                             e.preventDefault();
                             categorizedData("men's clothing");
                         }}>
-                        <i className="fa fa-user-plus m-r-1"></i>
+                       <i className="fas fa-tshirt"></i>
                         Men's Clothing
                     </a>
                     <a className="btn btn-outline-dark m-r-1"
@@ -113,7 +110,7 @@ export default function Products() {
                             e.preventDefault();
                             categorizedData("women's clothing");
                         }}>
-                        <i className="fa fa-shopping-cart m-r-1"></i>
+                        <i className="fas fa-tshirt"></i>
                         Women's Clothing
                     </a>
                     <a className="btn btn-outline-dark m-r-1"
@@ -122,7 +119,7 @@ export default function Products() {
                             e.preventDefault();
                             categorizedData("electronics");
                         }}>
-                        <i className="fa fa-shopping-cart m-r-1"></i>
+                       <i className="fas fa-laptop-house"></i>
                         Electronics
                     </a>
 
