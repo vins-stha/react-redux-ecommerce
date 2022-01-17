@@ -79,8 +79,8 @@ export const Cart = () => {
     }) 
    
     return (
-        <div className='border p-3 justify-content-center'>
-        <h1>Your Items</h1>  
+        <div className='border p-3 center'>
+        <h1 className='center'>Your Cart Items</h1>  
         {state.productsInCart.length > 0 ? (
             <>
                     <div className="container d-flex flex-column">
@@ -94,7 +94,7 @@ export const Cart = () => {
 
             </>
            
-        ):(<h1>empty cart</h1>)}  
+        ):(<img className=" img-fluid mt-5 center" src="/assets/images/empty_cart.png"></img>)}  
         </div>
     )
 }
