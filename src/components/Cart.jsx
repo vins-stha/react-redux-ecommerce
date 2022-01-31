@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import {Link } from 'react-router-dom'
 
 
 export const Cart = () => {
@@ -60,9 +61,9 @@ export const Cart = () => {
                     </div>
 
                     <div className="prod-buttons buttons d-flex">
-                        <a className="btn btn-outline-dark "
-                            href="/product/id">
-                            <i className="fas fa-cart-plus m-r-1" /> details</a>
+                        <Link className="btn btn-outline-dark "
+                            to={`/product/${item.id}`}>
+                            <i className="fas fa-cart-plus m-r-1" /> details</Link>
                         <a className="btn btn-outline-dark" onClick={(e)=>{e.preventDefault(); handleChangeItem("remove", item)}}>
                             <i className="fa fa-shopping-cart m-r-1" />Remove </a>
                     </div>

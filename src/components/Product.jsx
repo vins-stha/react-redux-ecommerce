@@ -126,7 +126,7 @@ export default function Products() {
                         return (
                             <div key={product.id} className="card product-card center">
                                 <Link to={`product/${product.id}`}
-                                    // onClick={(e) => { e.preventDefault(); handleClick(product.id) }} 
+                                
                                     key={product.id} >
                                     <img className="card-img-top prod-image contain" src={product.image} alt="Card image cap" />
                                     <div className="card-body">
