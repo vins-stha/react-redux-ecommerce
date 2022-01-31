@@ -11,14 +11,15 @@ export default function Products() {
     const baseUrl = 'https://fakestoreapi.com/'
     const [categories, setCategories] = useState([])
 
+   // fetch products on load
     useEffect(() => {
         let url = 'products'
-        getProducts(url)
-        // getProducts(url='categories')
-        console.log('filteredData', filteredData)
+        
+        getProducts(url)     
 
     }, [])
 
+    // retrieve products from api
     const getProducts = async (url) => {
 
         let searchUrl = url === "categories" ? (baseUrl + "products/categories") : (baseUrl + url)
@@ -44,34 +45,6 @@ export default function Products() {
             cartStore.dispatch({
             type:"ADD_ITEM",
             payload: product
-        })
-
-    }
-
-    const cats = categories.map((category, id) => {
-        <a key={id} className="btn btn-outline-dark m-r-1"
-            href="products/category/jewelery"
-            onClick={(e) => {
-                e.preventDefault();
-                getProducts(`products/category/${category}`)
-            }}>
-            <i className="fa fa-sign-in m-r-1" />
-            {category}
-        </a>
-    })
-
-    const Product = () => {
-        // products.length > 0 
-        products.map((product, id) => {
-            return (
-                <div className="card product-card" style={{ width: 18 + 'em' }}>
-                    <img className="card-img-top prod-image contain" src={product.image} alt="Card image cap" />
-                    <div className="card-body">
-                        <p className="card-text">{product.title}</p>
-                    </div>
-                    <div className="btn btn-primary block">Add to Cart</div>
-                </div>
-            )
         })
 
     }

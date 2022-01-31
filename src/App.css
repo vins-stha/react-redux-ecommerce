@@ -44,14 +44,6 @@ a {
 
 }
 
-.citybox {
-  padding: 1rem;
-  width: 65%;
-  display: flex;
-  align-content: space-around;
-  align-items: center;
-
-}
 
 .searchBox {
   padding: 1.1rem !important;
@@ -62,144 +54,10 @@ a {
   height: 1rem !important;
 }
 
-.gps {
-  width: 1rem;
-  height: 1rem;
-}
-
-.results-container {
-  border: 2px solid green;
-  display: flex;
-  align-content: space-between;
-  justify-content: center;
-  width: 100%;
-  margin-top: 0.5rem;
-  min-height: 10rem;
-}
-
-.main-result {
-  width: 44%;
-  margin: 1rem;
-  padding: 0.25rem;
-}
-
-.side-result {
-  width: 44%;
-  margin: 1rem;
-}
-
 .contents {
   display: flex;
 }
 
-.temp {
-  font-size: 48.8px;
-  font-weight: 500;
-  line-height: 1.08;
-  margin-right: 50px;
-  white-space: nowrap;
-  width: 52px;
-  padding: 2rem;
-}
-
-.hi-lo-label {
-  color: #878787;
-  font-size: 20px;
-  line-height: 1.71
-}
-
-.phrase {
-  font-size: 0.9rem;
-  padding: 11px 0 10px;
-  display: block;
-}
-
-.day .night {
-  margin-left: 4rem;
-}
-
-.night {
-  padding-left: 4rem;
-  border-left: 1px solid #CECECE;
-}
-
-@media screen and (max-width:768px) {
-  .citybox {
-    margin-left: 2rem;
-  }
-
-  .searchBox {
-    width: 50%;
-  }
-
-  .head-nav {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .nav-logo {
-    width: 50%;
-
-  }
-
-  .citybox {
-    margin-left: 2rem;
-    padding-left: 1rem;
-    width: 100%
-  }
-
-  .searchBox {
-    width: 50%;
-  }
-
-  .results-container {
-    flex-direction: column;
-  }
-
-  .gps {
-    width: 1.1rem;
-    height: 2rem;
-  }
-
-  .main-result {
-    width: 90%;
-    height: 15rem;
-  }
-
-  .night {
-    padding: 1rem 0 0 0;
-    margin-top: 0;
-    border-top: 1px solid #CECECE;
-    border-left: none;
-  }
-}
-
-@media screen and (max-width:330px) {
-  .nav-logo {
-    width: 100%;
-    margin-top: 2rem;
-    text-align: center;
-  }
-
-  .nav-logo {
-    width: 100%;
-  }
-
-  .citybox {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .searchBox {
-    width: 85%;
-  }
-
-  .results-container {
-    margin-top: 2rem;
-  }
-}
 
 .form-flex {
   display: flex;
