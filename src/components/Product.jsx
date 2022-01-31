@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import ProductDetail from './ProductDetail';
-import {cartStore} from '../index.js'
+import { cartStore } from '../index.js'
+import { Link } from 'react-router-dom'
+
 
 export default function Products() {
 
@@ -11,11 +13,11 @@ export default function Products() {
     const baseUrl = 'https://fakestoreapi.com/'
     const [categories, setCategories] = useState([])
 
-   // fetch products on load
+    // fetch products on load
     useEffect(() => {
         let url = 'products'
-        
-        getProducts(url)     
+
+        getProducts(url)
 
     }, [])
 
@@ -28,7 +30,7 @@ export default function Products() {
 
         await fetch(searchUrl)
             .then(res => res.json())
-            .then(json => {               
+            .then(json => {
                 setProducts(json);
                 setFilteredData(json)
                 setLoading(false)
@@ -41,9 +43,10 @@ export default function Products() {
         return (<ProductDetail id={id} />)
     }
 
+    // dispatch addto cart on click
     const handleAddtoCart = (product) => {
-            cartStore.dispatch({
-            type:"ADD_ITEM",
+        cartStore.dispatch({
+            type: "ADD_ITEM",
             payload: product
         })
 
@@ -54,7 +57,7 @@ export default function Products() {
         setFilteredData(cat_data);
     }
 
- 
+
     return (
         <>
             <div className="product-contents clearfix">
@@ -74,7 +77,7 @@ export default function Products() {
                             e.preventDefault();
                             categorizedData("men's clothing");
                         }}>
-                       <i className="fas fa-tshirt"></i>
+                        <i className="fas fa-tshirt"></i>
                         Men's Clothing
                     </a>
                     <a className="btn btn-outline-dark m-r-1"
@@ -92,7 +95,7 @@ export default function Products() {
                             e.preventDefault();
                             categorizedData("electronics");
                         }}>
-                       <i className="fas fa-laptop-house"></i>
+                        <i className="fas fa-laptop-house"></i>
                         Electronics
                     </a>
 
@@ -122,21 +125,21 @@ export default function Products() {
                     {filteredData.map((product, id) => {
                         return (
                             <div key={product.id} className="card product-card center">
-                                <a href={`product/${product.id}`} 
-                                // onClick={(e) => { e.preventDefault(); handleClick(product.id) }} 
-                                key={product.id} >
+                                <Link to={`product/${product.id}`}
+                                    // onClick={(e) => { e.preventDefault(); handleClick(product.id) }} 
+                                    key={product.id} >
                                     <img className="card-img-top prod-image contain" src={product.image} alt="Card image cap" />
                                     <div className="card-body">
                                         <p className="card-text small">{(product.title).length < 35 ? (product.title) : (product.title).substring(0, 32) + "..."}</p>
                                         <div className="card-text small">Price : ${product.price}</div>
                                     </div>
-                                </a>
-                                <a className="btn btn-primary block" 
-                                    onClick={ (e)=>
-                                        {e.preventDefault(); 
-                                        handleAddtoCart(product)}
+                                </Link>
+                                <a className="btn btn-primary block"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleAddtoCart(product)
                                     }
-                                
+                                    }
                                 >Add to Cart</a>
                             </div>
                         )
